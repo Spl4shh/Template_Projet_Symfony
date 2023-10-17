@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+            Neutral Title
+        {% endblock %}
+    </title>
+
+    {# Icons #}
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.12/css/all.css'>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="{{ asset('style/base/base.css') }}" rel="stylesheet"/>
+
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+
+<body>
+{# ---- Navbar ---- #}
+{% block navbar %}
+    <div>
+        <nav class="navbar">
+            <button onclick="toggleNav()" type="button" id="burger-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="{{ path("home") }}" class="flex-centered">
+                Home
+            </a>
+            <div></div>
+        </nav>
+    </div>
+
+    {# hidden menu #}
+    <div id="mySidebar" class="sidebar">
+        <a class="close-btn" onclick="toggleNav()">
+            <img class="back-arrow-sidebar" src="{{ asset('img/icons/back_w.png') }}" alt="Arrow">
+        </a>
+        <div class="sidebar-content">
+
+            <div class="block-sidebar">
+                <a href="">TEST</a>
+            </div>
+            <div class="block-sidebar">
+                <a href="">TEST&nbspMANUEL</a>
+            </div>
+            {# &nbsp <-- remplace le ' ' dans le menu lateral #}
+        </div>
+    </div>
+    {# end hidden menu #}
+{% endblock %}
+{# ---- End Navbar ---- #}
+
+<div>
+    {% block body %}
+    {% endblock %}
+</div>
+
+{# Footer #}
+{% block footer %}
+    <footer class="footer">
+        <p>
+            &copy {{ 'now' | date('Y') }} Copyright
+        </p>
+        {#  &copy; pour le c entouré de copyright #}
+    </footer>
+{% endblock %}
+{# End Footer #}
+</body>
+
+{# Partie Script doit etre chargé apres le code
+       car le code est géneré apres l'appel du JS #}
+
+<script src="{{ asset('script/base/base.js') }}"></script>
+
+{% block javascripts %}
+{% endblock %}
+
+</html>
