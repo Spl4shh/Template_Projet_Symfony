@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ person.firstName }} {{ person.name|slice(0, 1) }}{% endblock %}
+
+{% block stylesheets %}
+    {# CSS pour les tableaux  #}
+    <link rel='stylesheet' href="{{ asset('style/base/table.css') }}">
+
+    <link href="{{ asset("style/example/example.css") }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("script/example/showExample.js") }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="flex-vertical flex-centered main-block">
+        <h2 class="title">
+            {{ example.login }}
+        </h2>
+        <div class="show-container flex-vertical flex-centered">
+            <div class="show-block flex-wrap">
+                <div class="show-sub-block">
+                    <label for="login" class="input-label">Login</label>
+                    <p>
+                        {{ example.login }}
+                    </p>
+                </div>
+                <div class="show-sub-block">
+                    <label for="nom" class="input-label">Nom</label>
+                    <p>
+                        {{ example.name }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

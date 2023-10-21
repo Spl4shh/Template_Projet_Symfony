@@ -1,0 +1,21 @@
+#img-profile {
+      width: 25%;
+      max-width: 110px;
+}
+
+.navbar-replace-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      font-weight: lighter;
+      color: var(--white);
+      margin-top: 10px;
+}
+
+/* Mobile Version Table Information Responsive */
+@media (max-width: 650px) {
+      .table-information {
+            font-size: 4vw;
+            width: 80%;
+            padding: 0;
+      }
+}

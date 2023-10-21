@@ -1,0 +1,13 @@
+.big-size {
+    font-size: 10vw;
+}
+
+.img-accueil {
+    max-width: 28%;
+}
+
+@media (max-width: 800px) {
+    .big-size {
+        font-size: 20vw;
+    }
+}
