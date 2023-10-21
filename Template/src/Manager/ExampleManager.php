@@ -3,12 +3,13 @@
 namespace App\Manager;
 
 use App\Entity\Example;
+use App\Repository\ExampleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * Ici remplacer tout les entity par l'objet concerné
  */
-class EntityManager
+class ExampleManager
 {
     private EntityManagerInterface $manager;
     private ExampleRepository $exampleRepository;
@@ -36,5 +37,17 @@ class EntityManager
         $this->manager->flush();
     }
 
+    /**
+     * @param Example $entity
+     * @return void
+     */
     public function setData(Example $entity): void {}
+
+    /**
+     * @param int $id
+     * @return Example
+     */
+    public function find(int $id): Example {
+        return new Example();
+    }
 }

@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Créer une Personne{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset("style/example/example.css") }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('script/generic/formGenericFunction.js') }}"></script>
+    <script src="{{ asset("script/example/editExample.js") }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="flex-vertical flex-centered main-block show-container">
+        <h2 class="title">
+            Création d'un Example
+        </h2>
+        <div>
+            {% if message != "" %}
+                <div class="form-group flex-horizontal flex-centered">
+                    <div class="message message-information">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <form action="" method="post" class="flex-vertical flex-centered" id="form-example" onsubmit="disableButton()">
+            <div class="flex-horizontal block-form-group">
+                <div class="form-group">
+                    <label for="firstName" class="input-label">Login</label>
+                    <input type="text" name="login" class="form-input" value="{{ example.login }}">
+                </div>
+                <div class="form-group">
+                    <label for="name" class="input-label">Autre</label>
+                    <input type="text" name="autre" class="form-input" value="{{ example.login }}">
+                </div>
+            </div>
+            <div class="flex-horizontal block-form-group">
+                <div class="form-group">
+                    <label for="login" class="input-label">Autre 1</label>
+                    <input type="text" name="autre1" class="form-input" value="{{ example.login }}">
+                </div>
+            </div>
+            <div class="flex-horizontal block-form-group">
+                <div class="form-group">
+                    <label for="firstName" class="input-label">Autre 2</label>
+                    <input type="text" name="autre2" class="form-input" value="{{ example.login }}">
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="input-label">Autre 3</label>
+                    <input type="text" name="autre3" class="form-input" value="{{ example.login }}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary disableable" onclick="return formVerify()">
+                Modifier
+            </button>
+        </form>
+    </div>
+{% endblock %}

@@ -48,7 +48,7 @@ class ApiAuthenticator extends AbstractAuthenticator
             }
         }
 
-        return new SelfValidatingPassport(new UserBadge($loginPassword[0]));
+        return new SelfValidatingPassport(new UserBadge("PasswordInHeader_EXAMPLE"));
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response {
